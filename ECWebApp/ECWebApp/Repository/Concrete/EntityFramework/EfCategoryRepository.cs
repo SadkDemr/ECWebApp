@@ -8,51 +8,21 @@ using System.Threading.Tasks;
 
 namespace ECWebApp.Repository.Concrete.EntityFramework
 {
-    public class EfCategoryRepository : ICategoryRepository
+    public class EfCategoryRepository : EfGenericRepository<Category>, ICategoryRepository
     {
-        private AppContext context;
-        public EfCategoryRepository(AppContext ctx)
+        public EfCategoryRepository(AppContext context): base(context)
         {
-            context = ctx;
-        }
-        public void Add(Category entity)
-        {
-            context.Categories.Add(entity);
-        }
 
-        public void Delete(Category entity)
-        {
-            context.Categories.Remove(entity);
         }
-
-        public void Edit(Category entity)
+        public AppContext AppContext
         {
-            context.Entry<Category>(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            get { return context as AppContext; }
         }
-
-        public IQueryable<Category> Find(Expression<Func<Category, bool>> predicate)
-        {
-            return context.Categories.Where(predicate);
-        }
-
-        public Category Get(int id)
-        {
-            return context.Categories.FirstOrDefault(i => i.CategoryId == id);
-        }
-
-        public IQueryable<Category> GetAll()
-        {
-            return context.Categories;
-        }
-
         public Category GetByName(string name)
         {
-            return context.Categories.Where(i => i.CategoryName == name).FirstOrDefault();
-        }
-
-        public void Save()
-        {
-            context.SaveChanges();
+            return AppContext.Categories
+                .Where(i => i.CategoryName == name)
+                .FirstOrDefault();
         }
     }
 }
