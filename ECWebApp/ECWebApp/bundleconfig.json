@@ -1,0 +1,35 @@
+[
+  {
+    "outputFileName": "wwwroot/Edura/edura.min.js",
+    "inputFiles": [
+      "wwwroot/Edura/edura.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bundle.js",
+    "inputFiles": [
+      "wwwroot/Edura/vendor/jquery/jquery.min.js",
+      "wwwroot/Edura/vendor/bootstrap/js/bootstrap.min.js",
+      "wwwroot/Edura/vendor/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js",
+      "wwwroot/Edura/vendor/wow/wow.min.js",
+      "wwwroot/Edura/vendor/imagesloaded/imagesloaded.pkgd.min.js",
+      "wwwroot/Edura/vendor/SmoothScroll/SmoothScroll.min.js",
+      "wwwroot/Edura/vendor/waypoints/waypoints.min.js",
+      "wwwroot/Edura/vendor/counterup/jquery.counterup.min.js",
+      "wwwroot/Edura/vendor/hero-slider/js/modernizr.js",
+      "wwwroot/Edura/vendor/hero-slider/js/main.js",
+      "wwwroot/Edura/vendor/owl-carousel/owl.carousel.js",
+      "wwwroot/Edura/vendor/jquery/jquery.filterizr.js",
+      "wwwroot/Edura/edura.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bundle.css",
+    "inputFiles": [
+      "wwwroot/Edura/style.css",
+      "wwwroot/Edura/styles/lunar.css",
+      "wwwroot/Edura/custom.css",
+      "wwwroot/Edura/demo/demo.css"
+    ]
+  }
+]

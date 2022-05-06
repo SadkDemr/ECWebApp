@@ -1,4 +1,5 @@
-﻿using ECWebApp.Models;
+﻿using ECWebApp.Entity;
+using ECWebApp.Models;
 using ECWebApp.Repository.Abstract;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,20 +14,31 @@ namespace ECWebApp.Controllers
     public class HomeController : Controller
     {
         private IProductRepository repository;
+        private IUnitOfWork uow;
 
-        public HomeController(IProductRepository _repository)
+        public HomeController(IUnitOfWork _uow, IProductRepository _repository)
         {
             repository = _repository;
+            uow = _uow;
         }
 
         public IActionResult Index()
         {
-            return View(repository.GetAll());
+            return View(uow.Products.GetAll());
         }
 
         public IActionResult Details(int id)
         {
             return View(repository.Get(id));
+        }
+
+        public IActionResult Create()
+        {
+            var prd = new Product() { ProductName = "Yeni ürün" };
+            uow.Products.Add(prd);
+            uow.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
     }

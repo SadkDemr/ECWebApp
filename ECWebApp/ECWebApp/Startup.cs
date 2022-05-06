@@ -29,6 +29,7 @@ namespace ECWebApp
             services.AddDbContext<AppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IProductRepository, EfProductRepository>();
             services.AddTransient<ICategoryRepository, EfCategoryRepository>();
+            services.AddTransient<IUnitOfWork, EfUnitOfWork>();
             services.AddMvc();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
