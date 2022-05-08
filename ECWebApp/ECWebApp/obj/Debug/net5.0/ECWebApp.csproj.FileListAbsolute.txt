@@ -74,3 +74,4 @@ C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\bin\Debug\net5.0\Humanizer.dll
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
+C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Home\Home.cshtml.g.cs

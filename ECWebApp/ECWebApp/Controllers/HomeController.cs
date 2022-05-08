@@ -21,6 +21,10 @@ namespace ECWebApp.Controllers
             repository = _repository;
             uow = _uow;
         }
+        public IActionResult Home()
+        {
+            return View();
+        }
 
         public IActionResult Index()
         {
