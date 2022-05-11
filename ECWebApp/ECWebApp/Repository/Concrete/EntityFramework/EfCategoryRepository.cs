@@ -1,4 +1,5 @@
 ﻿using ECWebApp.Entity;
+using ECWebApp.Models;
 using ECWebApp.Repository.Abstract;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,17 @@ namespace ECWebApp.Repository.Concrete.EntityFramework
         {
             get { return context as AppContext; }
         }
+
+        public IEnumerable<CategoryModel> GetAllWithProductCount()
+        {
+            return GetAll().Select(i => new CategoryModel()
+            {
+                CategoryId = i.CategoryId,
+                CategoryName = i.CategoryName,
+                Count = i.ProductCategories.Count()
+            });
+        }
+
         public Category GetByName(string name)
         {
             return AppContext.Categories

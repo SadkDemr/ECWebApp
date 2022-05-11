@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <!-- TITLE -->
-    <title>Edura - Multipurpose Website Template</title>
+    <title>Elif Ticaret</title>
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="images/favicon.png" />
@@ -40,19 +40,19 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="#">
-                            <img src="images/logo.png" alt="Edura - Multipurpose Website Template">
+                            <img src="/images/logo.png" alt="Edura - Multipurpose Website Template">
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
-                                <a href="#" class="btn btn-primary">Home</a>
+                                <a asp-controller="Home" asp-action="Home" class="btn btn-primary">Home</a>
                             </li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="home/index">Index</a></li>  
+                                    <li><a asp-controller="Home" asp-action="Index" >Index</a></li>  
                                 </ul>
                             </li>
 
@@ -156,7 +156,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="images/logo.png" alt="Edura - Multipurpose Website Template">
+                        <img src="/images/logo.png" alt="Edura - Multipurpose Website Template">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. <b>Lorem ipsum dolor sit amet, consectetur adipiscing</b>.</p>
                         <br>
                         <ul class="list-unstyled list-inline social-icons">

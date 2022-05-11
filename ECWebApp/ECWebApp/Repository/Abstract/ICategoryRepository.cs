@@ -1,4 +1,5 @@
 ﻿using ECWebApp.Entity;
+using ECWebApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace ECWebApp.Repository.Abstract
     public interface ICategoryRepository: IGenericRepository<Category>
     {
         Category GetByName(string name);
+        IEnumerable<CategoryModel> GetAllWithProductCount();
      
     }
 }

@@ -75,3 +75,5 @@ C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\bin\Debug\net5.0\Microsoft.Entity
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Home\Home.cshtml.g.cs
+C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryMenu\Default.cshtml.g.cs
+C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Shared\Components\FeaturedProducts\Default.cshtml.g.cs

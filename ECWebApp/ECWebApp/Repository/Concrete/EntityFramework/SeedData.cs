@@ -21,12 +21,12 @@ namespace ECWebApp.Repository.Concrete.EntityFramework
             {
                 var products = new[]
                 {
-                    new Product(){ProductName="Amfi"},
-                    new Product(){ProductName="Ev Sinema Ses Sistemi"},
-                    new Product(){ProductName="SUBWOOFER"},
-                    new Product(){ProductName="HD Uydu Alıcısı"},
-                    new Product(){ProductName="Optik Mouse"},
-                    new Product(){ProductName="Kumanda"},
+                    new Product(){ProductName="Amfi", Image="product1.jpg",isHome=true,isApproved=true,isFeatured=true},
+                    new Product(){ProductName="Ev Sinema Ses Sistemi", Image="product2.jpg",isHome=false,isApproved=true,isFeatured=true},
+                    new Product(){ProductName="SUBWOOFER", Image="product3.jpg",isHome=true,isApproved=false,isFeatured=true},
+                    new Product(){ProductName="HD Uydu Alıcısı", Image="product4.jpg",isHome=true,isApproved=true,isFeatured=true},
+                    new Product(){ProductName="Optik Mouse", Image="mouse.jpg",isHome=true,isApproved=true,isFeatured=true},
+                    new Product(){ProductName="Kumanda", Image="kumanda.jpg",isHome=true,isApproved=true,isFeatured=true},
 
 
                 };
