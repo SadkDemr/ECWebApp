@@ -11,11 +11,18 @@ namespace ECWebApp.Entity
         public string ProductName { get; set; }
         public string Image { get; set; }
 
-        public bool isApproved { get; set; }
-        public bool isHome { get; set; }
-        public bool isFeatured { get; set; }
+        public string Description { get; set; }
+        public string HtmlContent { get; set; }
+        public DateTime DateAdded { get; set; }
+
+
+        public bool IsApproved { get; set; }
+        public bool IsHome { get; set; }
+        public bool IsFeatured { get; set; }
 
 
         public List<ProductCategory> ProductCategories { get; set; }
+        public List<Image> Images { get; set; }
+        public List<ProductAttribute> Attributes { get; set; }
     }
 }

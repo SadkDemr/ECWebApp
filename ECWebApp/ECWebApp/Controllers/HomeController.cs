@@ -26,9 +26,14 @@ namespace ECWebApp.Controllers
             return View();
         }
 
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
-            return View(uow.Products.GetAll().Where(i=>i.isApproved && i.isHome).ToList());
+            return View(uow.Products.GetAll().Where(i=>i.IsApproved && i.IsHome).ToList());
         }
 
         public IActionResult Details(int id)
