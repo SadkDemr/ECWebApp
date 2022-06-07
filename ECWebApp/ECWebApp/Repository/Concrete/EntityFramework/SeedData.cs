@@ -21,12 +21,12 @@ namespace ECWebApp.Repository.Concrete.EntityFramework
             {
                 var products = new[]
                 {
-                    new Product(){ProductName="Amfi", Image="product1.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması",HtmlContent="<b> Ürün açıklaması </b",DateAdded=DateTime.Now.AddDays(-10)},
-                    new Product(){ProductName="Ev Sinema Ses Sistemi", Image="product2.jpg",IsHome=false,IsApproved=true,IsFeatured=true, Description="Ürün açıklması",HtmlContent="<b> Ürün açıklaması </b",DateAdded=DateTime.Now.AddDays(-20)},
-                    new Product(){ProductName="SUBWOOFER", Image="product3.jpg",IsHome=true,IsApproved=false,IsFeatured=true, Description="Ürün açıklması",HtmlContent="<b> Ürün açıklaması </b",DateAdded=DateTime.Now.AddDays(-30)},
-                    new Product(){ProductName="HD Uydu Alıcısı", Image="product4.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması",HtmlContent="<b> Ürün açıklaması </b",DateAdded=DateTime.Now.AddDays(-5)},
-                    new Product(){ProductName="Optik Mouse", Image="mouse.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması",HtmlContent="<b> Ürün açıklaması </b",DateAdded=DateTime.Now.AddDays(-2)},
-                    new Product(){ProductName="Kumanda", Image="kumanda.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması",HtmlContent="<b> Ürün açıklaması </b",DateAdded=DateTime.Now.AddDays(-3)},
+                    new Product(){ProductName="Amfi", Image="product1.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması", HtmlContent="<b> Ürün açıklaması </b", DateAdded=DateTime.Now.AddDays(-10)},
+                    new Product(){ProductName="Ev Sinema Ses Sistemi", Image="product2.jpg",IsHome=false,IsApproved=true,IsFeatured=true, Description="Ürün açıklması", HtmlContent="<b> Ürün açıklaması </b", DateAdded=DateTime.Now.AddDays(-20)},
+                    new Product(){ProductName="SUBWOOFER", Image="product3.jpg",IsHome=true,IsApproved=false,IsFeatured=true, Description="Ürün açıklması", HtmlContent="<b> Ürün açıklaması </b", DateAdded=DateTime.Now.AddDays(-30)},
+                    new Product(){ProductName="HD Uydu Alıcısı", Image="product4.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması", HtmlContent="<b> Ürün açıklaması </b", DateAdded=DateTime.Now.AddDays(-5)},
+                    new Product(){ProductName="Optik Mouse", Image="mouse.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması", HtmlContent="<b> Ürün açıklaması </b", DateAdded=DateTime.Now.AddDays(-2)},
+                    new Product(){ProductName="Kumanda", Image="kumanda.jpg",IsHome=true,IsApproved=true,IsFeatured=true, Description="Ürün açıklması", HtmlContent="<b> Ürün açıklaması </b", DateAdded=DateTime.Now.AddDays(-3)},
 
 
                 };

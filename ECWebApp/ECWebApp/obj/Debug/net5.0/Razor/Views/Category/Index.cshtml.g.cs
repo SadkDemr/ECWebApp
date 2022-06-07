@@ -27,7 +27,7 @@ using ECWebApp.Models;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4fb9e25f1dab4466b1a78a4063072f8dfc036a24", @"/Views/Category/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8998d1085e5ead66cf15cdd847e6ad6f068181da", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1f47fae3574ca6e2588013124ef72496b2a00114", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Category_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Category>
     #nullable disable

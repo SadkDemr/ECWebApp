@@ -79,3 +79,5 @@ C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Shar
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.csproj.AssemblyReference.cache
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
 C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Product\List.cshtml.g.cs
+C:\Users\LENOVA\source\repos\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Shared\_ProductItem.cshtml.g.cs
