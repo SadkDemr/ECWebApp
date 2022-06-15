@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {}
   },
   "projects": {
@@ -12,14 +13,22 @@
         "projectPath": "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
         "packagesPath": "C:\\Users\\LENOVA\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\obj\\",
+=======
+    "C:\\Users\\msdemir\\Downloads\\ECWebApp-main (1)\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\msdemir\\Downloads\\ECWebApp-main (1)\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\msdemir\\Downloads\\ECWebApp-main (1)\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
+        "projectName": "ECWebApp",
+        "projectPath": "C:\\Users\\msdemir\\Downloads\\ECWebApp-main (1)\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
+        "packagesPath": "C:\\Users\\msdemir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\msdemir\\Downloads\\ECWebApp-main (1)\\ECWebApp-main\\ECWebApp\\ECWebApp\\obj\\",
+>>>>>>> b4d56fb6abf958b8a9c51aa8ffe4ebedabb223c5
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVA\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\msdemir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -171,6 +171,7 @@ C:\Users\msdemir\Downloads\ECWebApp-main (1)\ECWebApp-main\ECWebApp\ECWebApp\obj
 C:\Users\msdemir\Downloads\ECWebApp-main (1)\ECWebApp-main\ECWebApp\ECWebApp\obj\Debug\net5.0\ref\ECWebApp.dll
 C:\Users\msdemir\Downloads\ECWebApp-main (1)\ECWebApp-main\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.pdb
 C:\Users\msdemir\Downloads\ECWebApp-main (1)\ECWebApp-main\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.genruntimeconfig.cache
+<<<<<<< HEAD
 C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\bin\Debug\net5.0\appsettings.json
 C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\bin\Debug\net5.0\bower.json
 C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\bin\Debug\net5.0\ECWebApp.StaticWebAssets.xml
@@ -259,3 +260,5 @@ C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\obj\Debu
 C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.pdb
 C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.genruntimeconfig.cache
 C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Admin\EditCategory.cshtml.g.cs
+=======
+>>>>>>> b4d56fb6abf958b8a9c51aa8ffe4ebedabb223c5

@@ -3,8 +3,16 @@ build_property.TargetFramework = net5.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
+<<<<<<< HEAD
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ECWebApp
 build_property.ProjectDir = C:\Users\LENOVA\Downloads\ECWebApp-main\ECWebApp-main\ECWebApp\ECWebApp\
+=======
+build_property.PublishSingleFile = 
+build_property.IncludeAllContentForSelfExtract = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = ECWebApp
+build_property.ProjectDir = C:\Users\msdemir\Downloads\ECWebApp-main (1)\ECWebApp-main\ECWebApp\ECWebApp\
+>>>>>>> b4d56fb6abf958b8a9c51aa8ffe4ebedabb223c5
