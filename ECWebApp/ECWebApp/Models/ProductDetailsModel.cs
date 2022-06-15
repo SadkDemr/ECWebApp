@@ -8,9 +8,10 @@ namespace ECWebApp.Models
 {
     public class ProductDetailsModel
     {
+        
         public Product Product { get; set; }
-        public List<Image> ProductImages { get; set; }
-        public List<ProductAttribute> ProductAttributes { get; set; }
+        public List<Image> Images { get; set; }
+        public List<ProductAttribute> Attributes { get; set; }
         public List<Category> Categories { get; set; }
     }
 }

@@ -12,6 +12,8 @@ namespace ECWebApp.Repository.Abstract
     {
         Category GetByName(string name);
         IEnumerable<CategoryModel> GetAllWithProductCount();
-     
+        void RemoveFromCategory(int ProductId, int CategoryId);
+
+
     }
 }

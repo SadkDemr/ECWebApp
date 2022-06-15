@@ -8,6 +8,7 @@ using ECWebApp.Models;
 using ECWebApp.Entity;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECWebApp.Controllers
 {
@@ -23,6 +24,59 @@ namespace ECWebApp.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult EditCategory(int id)
+        {
+            var entity = unitofWork.Categories.GetAll()
+                                .Include(i => i.ProductCategories)
+                                .ThenInclude(i => i.Product)
+                                .Where(i => i.CategoryId == id)
+                                .Select(i => new AdminEditCategoryModel()
+                                {
+                                    CategoryId = i.CategoryId,
+                                    CategoryName = i.CategoryName,
+                                    Products = i.ProductCategories.Select(a => new AdminEditCategoryProduct()
+                                    {
+                                        ProductId = a.ProductId,
+                                        ProductName = a.Product.ProductName,
+                                        Image = a.Product.Image,
+                                        IsApproved = a.Product.IsApproved,
+                                        IsFeatured = a.Product.IsFeatured,
+                                        IsHome = a.Product.IsHome
+                                    }).ToList()
+                                }).FirstOrDefault();
+
+            return View(entity);
+        }
+
+        [HttpPost]
+        public IActionResult EditCategory(Category entity)
+        {
+            if (ModelState.IsValid)
+            {
+                unitofWork.Categories.Edit(entity);
+                unitofWork.SaveChanges();
+
+                return RedirectToAction("CatalogList");
+            }
+
+            return View("Error");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RemoveFromCategory(int ProductId, int CategoryId)
+        {
+            if (ModelState.IsValid)
+            {
+                //silme
+                unitofWork.Categories.RemoveFromCategory(ProductId, CategoryId);
+                unitofWork.SaveChanges();
+                return Ok();
+            }
+            return BadRequest();
         }
 
         public IActionResult CatalogList()

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using System.Data.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECWebApp.Repository.Concrete.EntityFramework
 {
@@ -35,6 +37,12 @@ namespace ECWebApp.Repository.Concrete.EntityFramework
             return AppContext.Categories
                 .Where(i => i.CategoryName == name)
                 .FirstOrDefault();
+        }
+
+        public void RemoveFromCategory(int ProductId, int CategoryId)
+        {
+            var cmd = $"delete from ProductCategory where ProductId={ProductId} and CategoryId={CategoryId}";
+            context.Database.ExecuteSqlRaw(cmd);
         }
     }
 }

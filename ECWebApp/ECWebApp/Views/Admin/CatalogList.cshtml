@@ -1,6 +1,6 @@
 ﻿@model CatalogListModel
 @{ ViewData["Title"] = "CatalogList";
-   Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 <h2>Catalog</h2>
 <hr />
 <div class="card">
@@ -23,7 +23,9 @@
     <td>@item.CategoryId</td>
     <td>@item.CategoryName</td>
     <td>
-        <button class="btn btn-primary btn-sm">Edit</button>
+        <a asp-controller="Admin" asp-action="EditCategory" asp-route-id="@item.CategoryId" class="btn btn-primary btn-sm">
+            Edit
+        </a>
         <button class="btn btn-danger btn-sm">Delete</button>
     </td>
 </tr>            }
@@ -37,7 +39,8 @@
         @Html.Partial("_addCategoryForm", new Category())
         @section scripts{
 
-            <script>$("#addCategory").submit(function (event) {
+            <script>
+                $("#addCategory").submit(function (event) {
 
                     event.preventDefault();
                     var form = $(this);
@@ -68,7 +71,10 @@
                     });
 
 
-                });</script>
+                });
+
+
+            </script>
 
         }
 

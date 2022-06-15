@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B86CHUrF0kQyDl0ESxHVJAC4u3Yj6BODMMruDJahUthDcLVH8qUd2f25rAxAQ/N1qjz6Z0jPJmvDy9uKhYDz2A==",
+  "dgSpecHash": "LIBEPPeXDUqV0iQVKK5eK7BsA5jvejdSiTlWGmwxdGkC7OcT1zUeMMl8Y9MswtVTKt9GcMRBQ97OfPex2Rc3uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\LENOVA\\source\\repos\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
+  "projectFilePath": "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVA\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\LENOVA\\.nuget\\packages\\microsoft.aspnet.mvc\\5.0.0\\microsoft.aspnet.mvc.5.0.0.nupkg.sha512",

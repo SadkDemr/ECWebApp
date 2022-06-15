@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LENOVA\\source\\repos\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {}
+    "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LENOVA\\source\\repos\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {
+    "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LENOVA\\source\\repos\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
         "projectName": "ECWebApp",
-        "projectPath": "C:\\Users\\LENOVA\\source\\repos\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
+        "projectPath": "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\ECWebApp.csproj",
         "packagesPath": "C:\\Users\\LENOVA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LENOVA\\source\\repos\\ECWebApp\\ECWebApp\\obj\\",
+        "outputPath": "C:\\Users\\LENOVA\\Downloads\\ECWebApp-main\\ECWebApp-main\\ECWebApp\\ECWebApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
