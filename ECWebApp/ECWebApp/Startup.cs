@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using ECWebApp.Repository.Concrete.EntityFramework;
 using ECWebApp.Repository.Abstract;
 using AppContext = ECWebApp.Repository.Concrete.EntityFramework.AppContext;
+using ECWebApp.IdentityCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace ECWebApp
 {
@@ -27,10 +29,17 @@ namespace ECWebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddTransient<IProductRepository, EfProductRepository>();
             services.AddTransient<ICategoryRepository, EfCategoryRepository>();
             services.AddTransient<IUnitOfWork, EfUnitOfWork>();
-            services.AddMvc();
+            services.AddMvc()
+                .AddSessionStateTempDataProvider();
+            services.AddSession();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
@@ -44,6 +53,9 @@ namespace ECWebApp
 
             app.UseStaticFiles();
             app.UseStatusCodePages();
+            app.UseSession();
+            app.UseAuthentication();
+            app.UseMvcWithDefaultRoute();
 
             app.UseMvc(routes =>
             {
@@ -60,6 +72,7 @@ namespace ECWebApp
             });
 
             SeedData.EnsurePopulated(app);
+            SeedIdentity.CreateIdentityUsers(app.ApplicationServices, Configuration).Wait();
             
         }
     }

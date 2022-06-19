@@ -1,6 +1,5 @@
-﻿@{
-    ViewData["Title"] = "Home";
-}
+﻿@model IEnumerable<Product>
+@{ ViewData["Title"] = "Home"; }
 <section class="cd-hero">
     <ul class="list-unstyled cd-hero-slider autoplay">
 
@@ -167,105 +166,30 @@
                     <h3>LATEST <b>PROJECTS</b></h3>
                 </div>
 
+                @foreach (var item in Model)
+                {
+            <div class="media">
+                <a class="media-left" href="#">
+                    <table class="image-table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img alt="" class="img-responsive product-thumb" src="/images/products/tn/@item.Image">
+                                </td>
+                            </tr>
+                        </tbody>
 
-                <div id="portfolio-carousel-home" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                    </table>
+                        
 
-                    <div class="owl-wrapper-outer">
-                        <div class="owl-wrapper" style="width: 4356px; left: 0px; display: block; transition: all 800ms ease 0s; transform: translate3d(-726px, 0px, 0px);">
-                            <div class="owl-item" style="width: 363px;">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-top">
-                                        <img alt="" class="img-responsive" src="/images/portfolio/portfolio1.jpg">
-                                        <div class="mask"></div>
-                                        <span class="portfolio-tag"><i class="fa fa-tag fa-fw"></i> <a href="#">Scripts</a>, <a href="#">Technology</a></span>
-                                        <ul class="list-unstyled list-inline">
-                                            <li><a href="#"><i class="fa fa-search fa-fw"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link fa-fw"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <span class="portfolio-item-desc"><a href="#">Template Development</a></span>
-                                </div>
-                            </div><div class="owl-item" style="width: 363px;">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-top">
-                                        <img alt="" class="img-responsive" src="/images/portfolio/portfolio2.jpg">
-                                        <div class="mask"></div>
-                                        <span class="portfolio-tag"><i class="fa fa-tag fa-fw"></i> <a href="#">Technology</a></span>
-                                        <ul class="list-unstyled list-inline">
-                                            <li><a href="#"><i class="fa fa-search fa-fw"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link fa-fw"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <span class="portfolio-item-desc"><a href="#">Website Design</a></span>
-                                </div>
-                            </div><div class="owl-item" style="width: 363px;">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-top">
-                                        <img alt="" class="img-responsive" src="/images/portfolio/portfolio3.jpg">
-                                        <div class="mask"></div>
-                                        <span class="portfolio-tag"><i class="fa fa-tag fa-fw"></i> <a href="#">Scripts</a>, <a href="#">Development</a></span>
-                                        <ul class="list-unstyled list-inline">
-                                            <li><a href="#"><i class="fa fa-search fa-fw"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link fa-fw"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <span class="portfolio-item-desc"><a href="#">Mobile App</a></span>
-                                </div>
-                            </div><div class="owl-item" style="width: 363px;">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-top">
-                                        <img alt="" class="img-responsive" src="/images/portfolio/portfolio4.jpg">
-                                        <div class="mask"></div>
-                                        <span class="portfolio-tag"><i class="fa fa-tag fa-fw"></i> <a href="#">Web Design</a>, <a href="#">Technology</a></span>
-                                        <ul class="list-unstyled list-inline">
-                                            <li><a href="#"><i class="fa fa-search fa-fw"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link fa-fw"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <span class="portfolio-item-desc"><a href="#">App Development</a></span>
-                                </div>
-                            </div><div class="owl-item" style="width: 363px;">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-top">
-                                        <img alt="" class="img-responsive" src="/images/portfolio/portfolio5.jpg">
-                                        <div class="mask"></div>
-                                        <span class="portfolio-tag"><i class="fa fa-tag fa-fw"></i> <a href="#">Web Design</a>, <a href="#">Development</a></span>
-                                        <ul class="list-unstyled list-inline">
-                                            <li><a href="#"><i class="fa fa-search fa-fw"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link fa-fw"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <span class="portfolio-item-desc"><a href="#">Website Optimization</a></span>
-                                </div>
-                            </div><div class="owl-item" style="width: 363px;">
-                                <div class="portfolio-item">
-                                    <div class="portfolio-top">
-                                        <img alt="" class="img-responsive" src="/images/portfolio/portfolio6.jpg">
-                                        <div class="mask"></div>
-                                        <span class="portfolio-tag"><i class="fa fa-tag fa-fw"></i> <a href="#">Technology</a>, <a href="#">Development</a></span>
-                                        <ul class="list-unstyled list-inline">
-                                            <li><a href="#"><i class="fa fa-search fa-fw"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-link fa-fw"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <span class="portfolio-item-desc"><a href="#">Network Concept</a></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </a>
 
+                <div class="media-body">
+                    <a asp-controller="Product" asp-action="Details" asp-all-route-id="@item.ProductId" asp-route-id="@item.ProductId" class="product-title">@item.ProductName</a>
 
-
-
-
-
-
-
-
-
-
-                    <div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"><i class="fa fa-angle-left"></i></div><div class="owl-next"><i class="fa fa-angle-right"></i></div></div></div>
                 </div>
+            </div>            }
+
 
             </div>
         </div>
@@ -273,70 +197,6 @@
 
 
 
-    <div id="partners" class="container-fluid padding35">
-        <div class="container">
-            <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-                <div class="col-md-12 text-center">
-                    <h3 class="text-uppercase">Our <b>Partners</b></h3>
-                    <div class="space40"></div>
-                </div>
-
-                <div class="col-md-12 ">
-                    <!-- carousel start -->
-                    <div id="partners-gallery" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
-
-                        <div class="owl-wrapper-outer">
-                            <div class="owl-wrapper" style="width: 3192px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
-                                <div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/pinterest.png">
-                                    </div>
-                                </div><div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/wordpress.png">
-                                    </div>
-                                </div><div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/pinterest.png">
-                                    </div>
-                                </div><div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/dribbble.png">
-                                    </div>
-                                </div><div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/pinterest.png">
-                                    </div>
-                                </div><div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/wordpress.png">
-                                    </div>
-                                </div><div class="owl-item" style="width: 228px;">
-                                    <div class="text-center">
-                                        <img alt="" src="/images/partners/pinterest.png">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="owl-controls clickable"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div><div class="owl-page"><span class=""></span></div></div></div>
-                    </div>
-                    <!-- carousel end -->
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
 </section>

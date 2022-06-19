@@ -23,7 +23,7 @@ namespace ECWebApp.Controllers
         }
         public IActionResult Home()
         {
-            return View();
+            return View(uow.Products.GetAll().Where(i => i.IsApproved && i.IsHome).ToList());
         }
 
         public IActionResult Contact()
