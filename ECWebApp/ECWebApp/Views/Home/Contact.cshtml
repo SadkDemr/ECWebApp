@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ContactModel
+@{
     ViewData["Title"] = "Contact";
 }
 <section id="content">
@@ -17,23 +18,25 @@
                     <h4>SEND A <b>MESSAGE</b></h4>
                 </div>
 
+                <h1>@ViewBag.Message</h1>
                 <form>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <input type="text" class="form-control input-lg" placeholder="Your Name*" required="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="email" class="form-control input-lg" placeholder="Your Email*" required="">
-                        </div>
-                        <div class="form-group col-md-4">
-                            <input type="text" class="form-control input-lg" placeholder="Your Phone">
-                        </div>
-                        <div class="form-group col-xs-12">
-                            <input type="text" class="form-control input-lg" placeholder="Subject">
+                            <label asp-for="@Model.Name"></label>
+                            <input type="text" asp-for="@Model.Name" class="form-control input-lg" placeholder="Your Name*" required="">
+                            <span class="text-danger" asp-validation-for="@Model.Name"></span>
                         </div>
 
                         <div class="form-group col-xs-12">
-                            <textarea class="form-control" rows="12" placeholder="Your Message*" required=""></textarea>
+                            <label asp-for="@Model.Subject"></label>
+                            <input type="text" asp-for="@Model.Subject" class="form-control input-lg" placeholder="Subject">
+                            <span class="text-danger" asp-validation-for="@Model.Subject"></span>
+                        </div>
+
+                        <div class="form-group col-xs-12">
+                            <label asp-for="@Model.Message"></label>
+                            <textarea class="form-control" asp-for="@Model.Message" rows="12" placeholder="Your Message*" required=""></textarea>
+                            <span class="text-danger" asp-validation-for="@Model.Message"></span>
                         </div>
 
                         <div class="form-group col-xs-12 text-left">

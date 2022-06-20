@@ -86,3 +86,7 @@ C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.
 C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.genruntimeconfig.cache
 C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\obj\Debug\net5.0\ECWebApp.csproj.AssemblyReference.cache
 C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\bin\Debug\net5.0\MailKit.dll
+C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\bin\Debug\net5.0\MimeKit.dll
+C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+C:\Users\LENOVA\OneDrive\Masaüstü\ECWebApp\ECWebApp\obj\Debug\net5.0\Razor\Views\Admin\EditProduct.cshtml.g.cs

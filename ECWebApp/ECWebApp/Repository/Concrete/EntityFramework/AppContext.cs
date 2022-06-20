@@ -19,6 +19,7 @@ namespace ECWebApp.Repository.Concrete.EntityFramework
         public DbSet<Product> Products { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<ProductAttribute> Attributes { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
