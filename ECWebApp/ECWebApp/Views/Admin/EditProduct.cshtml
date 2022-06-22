@@ -1,82 +1,127 @@
-﻿@model Product
+﻿@model ProductModel
 
 @{ ViewData["Title"] = "EditProduct";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    
-    }
 
-<div class="container pb-5 pt-3">
+    var counter = 0;
+}
 
-    <h2>Ürün Güncelleme</h2>
-    <hr />
+<h1>Ürünleri Düzenle</h1>
+<hr />
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-     
-<div class="form-horizontal">
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.ProductName)
+<form asp-controller="Admin" asp-action="EditProduct" method="post" enctype="multipart/form-data">
+    <!-- enctype -> Form içinden dosya taşıma işlemleri için.  -->
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+    <div class="row">
+        <div class="col-md-8">
+
+            <input type="hidden" name="ProductId" value="@Model.ProductId" />
+            <div class="form-group row">
+                <label asp-for="ProductName" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="ProductName" value="@Model.ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span> <!-- Hata mesajı -->
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Image" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input type="hidden" name="ImageUrl" value="@Model.Image" />
+                    <img src="~/images/products/tn/@Model.Image" width="80" />
+                    <input type="file" name="file" value="" />
+                    @*  <input asp-for="ImageUrl" value="@Model.ImageUrl" class="form-control" />*@
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Description" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <textarea id="editor" asp-for="Description" class="form-control">
+                        @Model.Description
+                    </textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span> <!-- Hata mesajı -->
+                </div>
+            </div>
+            <!--<div class="form-group row">
+    <label asp-for="Attributes" class="col-md-2 col-form-label"></label>
+    <div class="col-md-10">
+        <textarea id="editor" asp-for="Attributes" class="form-control">
+
+        </textarea>
+        <span asp-validation-for="Attributes" class="text-danger"></span>-->
+            <!-- Hata mesajı -->
+            <!--</div>
+    </div>-->
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsHome, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsHome)
+                        @Html.ValidationMessageFor(model => model.IsHome, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsApproved, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsApproved)
+                        @Html.ValidationMessageFor(model => model.IsApproved, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsFeatured, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsFeatured)
+                        @Html.ValidationMessageFor(model => model.IsFeatured, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-    </div>
+        <div class="col-md-4">
+            @foreach (var item in ViewBag.Categories)
+            {
+                var isChecked = "";
+                if (Model.SelectedCategories.Any(i => i.CategoryId == item.CategoryId))
+                {
+                    isChecked = "checked";
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    <input type="hidden" name="SelectedCategories[@counter].CategoryId" value="@item.CategoryId" />
+                    <input type="hidden" name="SelectedCategories[@counter].CategoryName" value="@item.CategoryName" />
+
+                    counter++;
+
+
+                }
+                else
+                {
+                    isChecked = "";
+                }
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox"
+                           name="categoryIds"
+                           value="@item.CategoryId"
+                           class="custom-control-input"
+                           id="category@(item.CategoryId)"
+                           @isChecked>
+                    <label class="custom-control-label" for="category@(item.CategoryId)">@item.CategoryName</label>
+                </div>
+
+            }
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Attributes, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Attributes, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.IsHome, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.IsHome)
-                @Html.ValidationMessageFor(model => model.IsHome, "", new { @class = "text-danger" })
+        <div class="form-group row">
+            <div class="col-md-10 offset-md-2">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
             </div>
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.IsApproved, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.IsApproved)
-                @Html.ValidationMessageFor(model => model.IsApproved, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
-
-    <div class="form-group pt-3">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Kaydet" class="btn btn-success" />
-            @Html.ActionLink("Listeye Dön", "CatalogList", null, new { @class = "btn btn-warning" })
-        </div>
-    </div>
-</div>
-    }
-</div>
+</form>

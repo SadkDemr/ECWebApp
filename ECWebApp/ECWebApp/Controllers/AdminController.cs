@@ -9,20 +9,27 @@ using ECWebApp.Entity;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ECWebApp.Controllers
 {
     public class AdminController : Controller
     {
         private IUnitOfWork unitofWork;
+        private IProductRepository _productRepository;
+        private ICategoryRepository _categoryRepository;
+        
 
-        public AdminController(IUnitOfWork _unitofWork)
+        public AdminController(IUnitOfWork _unitofWork, IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
             unitofWork = _unitofWork;
+            _categoryRepository = categoryRepository;
+            _productRepository = productRepository;
         }
 
         public IActionResult Index()
         {
+            
             return View();
         }
 
@@ -104,6 +111,21 @@ namespace ECWebApp.Controllers
             return BadRequest();
         }
 
+        [HttpPost]
+        public IActionResult DeleteCategory(int CategoryId)
+        {
+            var entity = unitofWork.Categories.Get(CategoryId);
+
+            if (entity != null)
+            {
+                unitofWork.Categories.Delete(entity);
+                
+            }
+
+            unitofWork.SaveChanges();
+            return RedirectToAction("CatalogList");
+        }
+
         [HttpGet]
         public IActionResult AddProduct()
         {
@@ -142,6 +164,103 @@ namespace ECWebApp.Controllers
             return View(entity);
         }
 
+        [HttpGet]
+        public IActionResult EditProduct(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var entity = unitofWork.Products.GetAll()
+                .Include(i => i.ProductCategories)
+                .ThenInclude(i => i.Product)
+                .Where(i => i.ProductId == id)
+                .Select(i => new ProductModel()
+                {
+                    ProductId = i.ProductId,
+                    ProductName = i.ProductName,
+                    Image = i.Image,
+                    Description = i.Description,
+                    IsApproved = i.IsApproved,
+                    IsFeatured = i.IsFeatured,
+                    IsHome = i.IsHome,
+
+                    SelectedCategories = i.ProductCategories.Select(c => c.Category).ToList()
+
+                }).FirstOrDefault();
+
+            ViewBag.Categories = unitofWork.Categories.GetAll();
+            unitofWork.SaveChanges();
+
+            return View(entity);
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditProduct(ProductModel model, int[] CategoryIds, IFormFile file)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var entity = unitofWork.Products.Get(model.ProductId);
+                //var id = model.ProductId;
+                //var entity = _productRepository.Get(model.ProductId);
+                if (entity == null)
+                {
+                    return NotFound();
+                }
+
+                entity.ProductName = model.ProductName;
+                entity.Description = model.Description;
+                entity.IsHome = model.IsHome;
+                entity.IsApproved = model.IsApproved;
+                entity.IsFeatured = model.IsFeatured;
+             
+                //entity.ImageUrl = model.ImageUrl; --> ImageUrl yi file olarak yüklüyoruz.
+                
+
+                if (file != null) // kullanıcı bir resim göndermiş ise.
+                {
+                    entity.Image = file.FileName;
+
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\products", file.FileName);
+                    var path_tn = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\products\\tn", file.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream); // asenktron saklama
+                    }
+                }
+
+                entity.DateAdded = DateTime.Now;
+                unitofWork.Products.Update(entity, CategoryIds);
+
+                ViewBag.Categories = unitofWork.Categories.GetAll();
+
+                unitofWork.SaveChanges();
+
+                return RedirectToAction("CatalogList");
+            }
+
+          /*  ViewBag.Categories = unitofWork.Categories.GetAll();*/ // GetAll  ile bütün Category bilgilerini alıyoruz.
+
+            
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int ProductId)
+        {
+            var entity = unitofWork.Products.Get(ProductId);
+
+            if (entity != null)
+            {
+                unitofWork.Products.Delete(entity);
+            }
+
+            unitofWork.SaveChanges();
+            return RedirectToAction("CatalogList");
+        }
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Product
+﻿@model ProductModel
 @{ ViewData["Title"] = "AddProduct";
                 Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 <div class="container">
@@ -49,7 +49,17 @@
             </div>
         </div>
 
-       
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsFeatured, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsFeatured)
+                    @Html.ValidationMessageFor(model => model.IsFeatured, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
 
 
 

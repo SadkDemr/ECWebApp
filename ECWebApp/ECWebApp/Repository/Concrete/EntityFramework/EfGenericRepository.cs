@@ -43,6 +43,7 @@ namespace ECWebApp.Repository.Concrete.EntityFramework
 
         public IQueryable<T> GetAll()
         {
+           
             return context.Set<T>();
         }
 

@@ -10,7 +10,10 @@ namespace ECWebApp.Repository.Abstract
     public interface IProductRepository : IGenericRepository<Product>
     {
         List<Product> GetTop5Products();
-        
+
+        void Update(Product entity, int[] CategoryIds);
+
+
 
     }
 }

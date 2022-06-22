@@ -43,10 +43,10 @@ namespace ECWebApp.Controllers
             {
                 MailMessage mail = new MailMessage();
                 // you need to enter your mail address
-                mail.From = new MailAddress("alexander.romaguera96@ethereal.email");
+                mail.From = new MailAddress("sendmessage1905@outlook.com");
 
                 //To Email Address - your need to enter your to email address
-                mail.To.Add("alexander.romaguera96@ethereal.email");
+                mail.To.Add("elifticaretbursa6316@outlook.com");
 
                 mail.Subject = sendMailDto.Subject;
 
@@ -65,10 +65,10 @@ namespace ECWebApp.Controllers
                 //create SMTP instant
 
                 //you need to pass mail server address and you can also specify the port number if you required
-                SmtpClient smtpClient = new SmtpClient("smtp.ethereal.email");
+                SmtpClient smtpClient = new SmtpClient("smtp.outlook.email");
 
                 //Create nerwork credential and you need to give from email address and password
-                NetworkCredential networkCredential = new NetworkCredential("alexander.romaguera96@ethereal.email", "kPh9W1KVvtn4jXwDSB");
+                NetworkCredential networkCredential = new NetworkCredential("sendmessage1905@outlook.com", "1905sadik!");
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.Credentials = networkCredential;
                 smtpClient.Port = 587; // this is default port number - you can also change this

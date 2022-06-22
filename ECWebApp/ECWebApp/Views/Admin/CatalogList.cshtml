@@ -26,7 +26,11 @@
         <a asp-controller="Admin" asp-action="EditCategory" asp-route-id="@item.CategoryId" class="btn btn-primary btn-sm">
             Edit
         </a>
-        <button class="btn btn-danger btn-sm">Delete</button>
+        <form asp-action="DeleteCategory" asp-controller="Admin" method="post" style="display:inline">
+            <input type="hidden" name="CategoryId" value="@item.CategoryId" />
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+
+        </form>
     </td>
 </tr>            }
 
@@ -137,7 +141,12 @@
         <a asp-controller="Admin" asp-action="EditProduct" asp-route-id="@item.ProductId" class="btn btn-primary btn-sm">
             Edit
         </a>
-        <button class="btn btn-danger btn-sm">Delete</button>
+        <form asp-action="Delete" asp-controller="Admin" method="post" style="display:inline">
+            <input type="hidden" name="ProductId" value="@item.ProductId" />
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+
+        </form>
+        
     </td>
 </tr>            }
 

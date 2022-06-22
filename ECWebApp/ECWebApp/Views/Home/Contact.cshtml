@@ -9,13 +9,13 @@
         <div class="row">
 
             <div class="col-xs-12 text-center padding25">
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p class="lead">Elif Ticaret İletişim</p>
             </div>
 
 
             <div class="col-md-6">
                 <div class="padding25">
-                    <h4>SEND A <b>MESSAGE</b></h4>
+                    <h4>MESAJ YOLLA</h4>
                 </div>
 
                 <h1>@ViewBag.Message</h1>
@@ -23,24 +23,24 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label asp-for="@Model.Name"></label>
-                            <input type="text" asp-for="@Model.Name" class="form-control input-lg" placeholder="Your Name*" required="">
+                            <input type="text" asp-for="@Model.Name" class="form-control input-lg" placeholder="Ad-Soyad*" required="">
                             <span class="text-danger" asp-validation-for="@Model.Name"></span>
                         </div>
 
                         <div class="form-group col-xs-12">
                             <label asp-for="@Model.Subject"></label>
-                            <input type="text" asp-for="@Model.Subject" class="form-control input-lg" placeholder="Subject">
+                            <input type="text" asp-for="@Model.Subject" class="form-control input-lg" placeholder="Konu">
                             <span class="text-danger" asp-validation-for="@Model.Subject"></span>
                         </div>
 
                         <div class="form-group col-xs-12">
                             <label asp-for="@Model.Message"></label>
-                            <textarea class="form-control" asp-for="@Model.Message" rows="12" placeholder="Your Message*" required=""></textarea>
+                            <textarea class="form-control" asp-for="@Model.Message" rows="12" placeholder="M*" required=""></textarea>
                             <span class="text-danger" asp-validation-for="@Model.Message"></span>
                         </div>
 
                         <div class="form-group col-xs-12 text-left">
-                            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-send fa-fw"></i> SEND EMAIL</button>
+                            <button type="submit" class="btn btn-primary btn-lg"><i class="fa fa-send fa-fw"></i> MAİL AT</button>
                         </div>
                     </div>
                 </form>
@@ -49,57 +49,33 @@
 
             <div class="col-md-6">
                 <div class="padding25">
-                    <h4>VISIT <b>US</b></h4>
+                    <h4> KONUM  </h4>
                 </div>
 
                 <section id="full-map" class="container-fluid map-container">
-                    <div id="gmap" class="gmap3" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-err-container"><div class="gm-err-content"><div class="gm-err-icon"><img src="https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" alt="" draggable="false" style="user-select: none;"></div><div class="gm-err-title">Hata! Bir sorun oluştu.</div><div class="gm-err-message">Bu sayfa Google Haritalar'ı düzgün şekilde yükleyemedi. Teknik ayrıntılar için JavaScript konsoluna bakın.</div></div></div></div></div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12190.704935578595!2d29.0668852!3d40.1940182!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb3f4d2045afb55fc!2zRUzEsEYgVMSwQ0FSRVQ!5e0!3m2!1str!2str!4v1655858725664!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </section>
 
             </div>
 
             <div class="col-md-12">
                 <div class="padding25 text-center">
-                    <h3>OUR <b>OFFICES</b></h3>
+                    <h3> <b>İŞ YERİMİZ</b></h3>
                 </div>
 
                 <div class="row text-center">
 
                     <div class="col-md-3">
-                        <h4><b>UNITED STATES</b></h4>
-                        <p><i class="fa fa-map-marker fa-fw"></i> 379 5th Ave, New York, 10001</p>
-                        <p><i class="fa fa-phone fa-fw"></i> +(112) 345 6879</p>
-                        <p><i class="fa fa-envelope fa-fw"></i> hello@example.com</p>
-                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-map-marker fa-fw"></i> View Map</button>
+                        <h4><b>BURSA</b></h4>
+                        <p><i class="fa fa-map-marker fa-fw"></i> Sakarya mahallesi Kıbrıs şehitler caddesi no:51A, Uluyol Uluyol Sokak No:51, 16190 Osmangazi/Bursa</p>
+                        <p><i class="fa fa-phone fa-fw"></i> 0536 876 53 63</p>
+                        <p><i class="fa fa-envelope fa-fw"></i> elifticaretbursa6316@gmail.com</p>
+                       
+                        @*<button type="submit" class="btn btn-default btn-sm"><i class="fa fa-map-marker fa-fw"></i> View Map</button>*@
                         <div class="space20"></div>
                     </div>
 
-                    <div class="col-md-3">
-                        <h4><b>GERMANY</b></h4>
-                        <p><i class="fa fa-map-marker fa-fw"></i> 379 5th Ave, Berlin, 22158</p>
-                        <p><i class="fa fa-phone fa-fw"></i> +(112) 345 6879</p>
-                        <p><i class="fa fa-envelope fa-fw"></i> hello@example.com</p>
-                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-map-marker fa-fw"></i> View Map</button>
-                        <div class="space20"></div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <h4><b>ROMANIA</b></h4>
-                        <p><i class="fa fa-map-marker fa-fw"></i> 379 5th Ave, Bucharest, 07725</p>
-                        <p><i class="fa fa-phone fa-fw"></i> +(112) 345 6879</p>
-                        <p><i class="fa fa-envelope fa-fw"></i> hello@example.com</p>
-                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-map-marker fa-fw"></i> View Map</button>
-                        <div class="space20"></div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <h4><b>AUSTRALIA</b></h4>
-                        <p><i class="fa fa-map-marker fa-fw"></i> 379 5th Ave, Melbourne, 58745</p>
-                        <p><i class="fa fa-phone fa-fw"></i> +(112) 345 6879</p>
-                        <p><i class="fa fa-envelope fa-fw"></i> hello@example.com</p>
-                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-map-marker fa-fw"></i> View Map</button>
-                        <div class="space20"></div>
-                    </div>
+                    
 
                 </div>
 
